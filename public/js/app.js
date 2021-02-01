@@ -1,5 +1,3 @@
-console.log('Client side js loaded...');
-
 const form = document.querySelector('form');
 const search = document.querySelector('input');
 
@@ -10,7 +8,7 @@ form.addEventListener('submit',(event)=>{
     const messageTwo = document.querySelector('#message-2');                
     messageOne.textContent = 'Loading....';
     
-    fetch('/weather?address='+location).then((response)=>{
+    fetch('/weather?address='+location).then((response)=>{a
         response.json().then((data)=>{
             if(data.error){
                 messageOne.textContent = 'Error: '+data.error;
