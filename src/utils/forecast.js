@@ -11,7 +11,11 @@ const forecast = (latitude, longitude, callback) => {
         }else{
             if(body.current){
                 const current = body.current;
-                const data =`${current.weather_descriptions[0]}. Current temperature is ${current.temperature} Celsius, but it feels like ${current.feelslike} Celsius. The precipoty for rain is ${current.precip} mm.`;
+                const data =`${current.weather_descriptions[0]}.
+                Current temperature is ${current.temperature} Celsius, and it feels like ${current.feelslike} Celsius.
+                The precipitation for rain is ${current.precip} mm. 
+                Current wind speed is ${current.wind_speed} m/s and wind is blowing unded ${current.wind_degree} degrees from ${current.wind_dir}.
+                Current pressure is ${current.pressure} hPa`;
                 callback(undefined,data);
             }else{
                 const errorCode = body.error.code;
